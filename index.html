@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/fonts-styles.css">
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <div class="navigation" id="navigation">
+        <input type="checkbox" class="navigation__check-box" id="navi-toggle">
+        <label for="navi-toggle" class="navigation__button">
+            <!--using this span element to create the hamburger menu icon so keeping it empty-->
+            <span class="navigation__icon"></span>
+        </label>
+        <div class="navigation__background">&nbsp;</div>
+        <nav class="navigation__nav">
+            <ul class="navigation__list">
+                <li class="navigation__item"><a href="#mission" class="navigation__link">Mission</a></li>
+                <li class="navigation__item"><a href="#vission" class="navigation__link">Vission</a></li>
+                <li class="navigation__item"><a href="#" class="navigation__link">About Us</a></li>
+                <li class="navigation__item"><a href="#values" class="navigation__link">Our Values</a></li>
+            </ul>
+        </nav>
+    </div>
+    <header class="header">
+        <ul class="header__icons">
+            <li class="header__list">
+                <li class="header__list">  <a href="3" class="header__link"><img src="https://img.icons8.com/ios-filled/50/000000/facebook-circled.png"/></a></li>
+                <li class="header__list">  <a href="3" class="header__link"><img src="https://img.icons8.com/color/48/000000/whatsapp.png"/></a></li>
+                <li class="header__list"> <a href="#" class="header__link"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAYAAACM/rhtAAAABmJLR0QA/wD/AP+gvaeTAAAJSklEQVRYhdWYa4ydRRnHfzPz3s5lz96vpVdpS7vllkIoWDQkIhpIJCESY5SYGIIkEqOR4Ec+aoJE+8GIxOAXYwyfNMZ6C3fLxRZKaQtsu9126fay7H3P7jnvbcYPc/bcW6hgov9k8r5n3plnfvPMM7cD/+MS7TKffOyZaxOtHpRC3m2MXgfG/y81HwohplJt/iTh6UefeODoZQH3PbLPLwddPxOIr+ug16RuoRPlI6SLEBIpBUJIQCCETWCqZowxgEFrXfmt0VpjTFr51iSjEWmESpYWZTgHOv3tSj7z/ccfvz9qAdz3yD4/ynT/LZWZbaZz85BUHlKqCtAnl4VN0TolTdNKx+o8ZTRq5cx5ma6OrWQzX1yDrLYeBp0/127hJqdvdMj1cijlfmpwAEJIlHJx3YAgyOJ5AUo5tQ4ISZLfNKxVdlt2ufxktR7YmEuN97ocuCGDUJ8a1MeRMYY0jUnT2IaBSfGWxhZTkX72Rz/51jEHINHqQZkf9NvBSQSBdulQHjt2dbB+a4ZCn8LLSUTbKdYOAlZXE2ZnI8bHixw9ukgc2zgVQuA4Ho7jkSSRhfV6keHMt4EfOABCqvtE0FMdT187FHRARxLQoT2GdnpsvcvDy31MoiYJAbmcQy7nsGFDlltu6eG556YZG1tuKOc4Hkp5aNPbSTT7lSqg0emAlBm64xy9SY6s9qqVNu112XKH/b0wmTJ1MGFhMiUqGtpNzEsBenlB1wbFupsdutY73HPPCAdemeW1N2Zayio/j4H1ANaDGGe0dBWqaVkcHHXYcoeH0TD2l5CpQ8mVOK4qYyBcNlw8lnDxWMK63S7bvuRx295e+NDhzfEZIllnWyiM0W4VEGiBU55g613Wc+P7Q4qvJwxqyKbgGlAaFPYJoAWkQCohlBBJKCkoKoibFoOpQzEI2P5lj5vuLBCNOUzHRS54SyRCN5R1aCMBbLrOwcsJolMpPc8n9HyEl5SxwKSQSRu/RRK8uz26bnX54I2Y8ecjpg7GDO1SdK5XjFznog/m6U5znHcXmXGL1boNfXMMDIWwcwlGrrYzOjrwnw1rvTwN3XscpAcbbnYYDsHVcPagtd23XVU6Kbgq6uLq0kCNae3lqjL0hDViNWjfklNN7miSzAv8vS7eToXss3X0jCY6nhK+EqOLdiaVX0kI9jqUX04YLMNACMX3re1cf2MM5OsmaRWwL2xtGEAXDQKNlGWkLKNUiBARUiTIXQXce9eD37h+qhFJZkQS3O6w8vuQ6EhKaX9EaX91i0UY6Jiz8H5OoAykbVaxtjFoCe0j404h1SqCxuCVo104928CAfq9RfSr0+ipFfttXQ552wByeyf5bwZEvztHeASStIAxdRS61taOIkxmYKmJqAVQihjXnQO2WG+oYnMRRM7BuXcjCEj/cY70pQsN3/XEMnpiGfW5IdQXRvDuG4QPjuGtTJMkBeK4G228hjqOhi0rMOPBuaDFTyBEiu9dJJuZwHUWWqAaOrFnAHyFfm+xBa5e6UsX0O8vgq9Qt/Qj0LjOAtnMaXzvAkLGLXX6Itha55OqB7OZUy3DWC/hhBAsIbwicnSzzTz5MmrDJCAw2gHtQOpiohxEOQjz6APTyO2dyGu6SJ87X7FmcJ1FHGcZuKGlrYym6roq4KXgZNdZRHYW3FINtjNvm5k7XzkPGYSKQcXglhDBUs2A7gK2Inoah7S5TSljtN08GttvS+Wt1sGcbYC7YrkVWyJF9p1EOO1tZfzTbeO9EVDFyN5x1PA7l23TLC/aNvsGLlsOQPT32zpLS4jcDHLkbWTfSVCNG4AQmox/riX+a0OcnUX2ngJ56YVZOMKm85PQ04e88QYoXbSnd1O5k2gwiYHUYBKD2FWJscnTFSNY0GARM7u5uev43kVAV5egqgdl/4m2cEKBzCpUp4PMK0QgYeIoxBEMb4RrbrRxKEEogXAFMiOReYXaczNi/UaII/Txd5rsxsiBsbaO8L0PWz14KcmONkXCMhx6EfbcCaM3Q88gnDgC8xXD3f2w7ToY2mB/H3oRqUK0hEsuFFJjCzSqLaAMpD3ECWFTu5Pp1AS89nfY/XkY3mBTs+LIdmRqAuFKlCMxoUaXK5RrdwZjUAPvkk7vaIFsBJQgcwqhBIQlCLLgZ6BcmYlSgA+4AjwgnoQ3n4WRUeheD5mCLVdchPOTcPKo9faaBIhAIl2JXkkgk7P5pVXwl5F9J9DT26i/rtcmiRLIvKp9W5q3gP3DcHEccspCNW/oSRkmD9lULwNkjD3Jxk13YAWqw8EMjNii83M2PzOP6D6Dmd9U77PKS142Nn7utH1uG4UeZT13JXcmAQQCeiV0Sev9pu9i9FoLODlRAypcQGTnWgFb7pAXT0BUgq4hGNpxBWRtFAjol/a5ps+MQu8glFcx4+83svfWgNvP4pyEfAoTr8H2O2DLHuuR8+/aY0cmAi+177KyCGoJiYTIgZIDSdMdWwCd0l5ihnbC9bfa/MMHkJ5BR1T/DbGHCL8G6EpBlIKngJyAjkpPZ05B0AEbb4Itt8HwZii+BeUpSIo0/L+itE1+Ah1Y0KUAImVHx81C5xBcvwM6Bm2do2/A1CmEAuEJTGjtRanAFdJUAQOlyguhCAZ6gY7mK9hhkDMwcjtkhm36pIpK8M4/4fSpapbMKNI4AQ0LscQVzmoVcCXWz4zPOw8PbG5aRaWBnhVIjsPZE5AfhezV4PWAyvHxZ42xUKvzMDcJ02OQJHYG1DUpMxK9ohlf8imb9NdVQG3ML9664Dy8O4nw1k48AgvnVbY/HcPSYZt8FwIfXAWq4vHUQJxAOYSw9SBK6MBcrhYVAjtaizVC4UhCNIcXXGNSnoLKLH70iQeOhilP7/+Xqm0anaUaXLWLEnoK0N0BGQ8cVdttHGnzujugp8OWrZefQKHpqJURUHcENAL+ei5PJMQvf/jTbxyvAgIsZYPvnpn1Dv/xVUUoUshGjcZcB/o6wfvI7Rs8F/oKtk69clFrp7MWIUzhD+8FTBbVm/n54vfWPlfXghdeeDbdc+fXnlldEINvj4vdaSLxPIPvG5QjoLfQ6pXLSQgIPChFjXu50lCyp+sogZmS5MgZyZ/HAjMTyV/kFla++tCvHqrGSNso//Fjvxl1cR4q+Po7K5F243YX1k9BjoSs44QrqXlKxzy1Nqz/V/o3Xyp1cEQQGZUAAAAASUVORK5CYII="/></a> </li>
+                <li class="header__list">  <a href="3" class="header__link"><img src="https://img.icons8.com/fluent/48/000000/twitter.png"/></a> </a></li>
+            </li>
+        </ul>
+        <div class="header__logo-box">
+           <a href=""> <img src="./background-assest/brand.png" alt="amazon" class="logo"></a>
+        </div>
+
+        <div class="header__text-box">
+          <h1 class="heading-primary"> 
+              <span class="heading-primary--main"><b>ab</b> airways welcomes you! <br>with pride</span>
+            <span class="heading-primary--sub"><b>Never Walk Until We Are</b></span></h1>
+            <a href="#" class="btn btn--white"><b>Explore Us</b></a>
+        </div>
+    </header>
+    <main>
+        <section class="section-about">
+            <div class="u-center-text u-margin-bottom-small">
+                <h3 class="heading-secondary" >
+                    Fully Custamized  Jet Charter Solutions
+                </h3>
+            </div>
+            
+            <div class="row">
+                <div class="col-1-of-2">
+                    <h3 class="heading-teriatry u-margin-bottom-small">we are here to fly you</h3>
+                    <p class="paragraph">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                     Dolorum mollitia aliquam tenetur eius, odio officia!
+                     orem ipsum dolor sit amet consectetur adipisicing elit.
+                     Dolorum mollitia aliquam tenetur eius, odio officia!
+                     Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                     Dolorum mollitia aliquam tenetur eius, </p>
+
+                     <h3 class="heading-teriatry u-margin-bottom-small">Come Fly Enjoy.... We are here for u</h3>
+                     <p class="paragraph">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                      Dolorum mollitia aliquam tenetur eius, odio officia!
+                      orem ipsum dolor sit amet consectetur adipisicing elit.
+                      Dolorum mollitia aliquam tenetur eius, odio officia!
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                      Dolorum mollitia aliquam tenetur eius, </p>
+                      <!-- <a href="#" class="btn-text">more &rarr;</a> -->
+                </div>
+                
+                <div class="col-1-of-2">
+                    <div class="composition">
+                        <img src="./background-assest/02.jpg" alt="pic-1" class="composition__photo composition__photo--p1">
+                        <img src="./background-assest/03.jpg" alt="pic-2" class="composition__photo composition__photo--p2">
+                        <img src="./background-assest/composition2.jpg" alt="pic-3" class="composition__photo composition__photo--p3">
+                     
+                    </div>
+
+                </div>
+            </div>
+
+        </section>
+
+        <!--code for the fetures boxx-->
+        <section class="section-features">
+            
+            <div class="row">
+                <div class="u-center-text u-margin-bottom-big">
+
+                    <h2 class="heading-secondary heading-row" >heading to be typed</h2>
+                </div>
+
+                <!--coloumn 1-->
+                <div class="col-1-of-4">
+                    
+                    <div class="feature-box">
+                        <i class=" feature-box__icon icon-basic-world"></i>
+                        <h3 class="heading-teriatry u-margin-bottom-small" > explore the world!</h3>
+                        <p class="feature-box__text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit, officia!
+                            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit, officia!
+                             
+                        </p>
+                    </div>
+                </div>
+
+                <!--coloumn 2-->
+                <div class="col-1-of-4">
+                    
+                    <div class="feature-box">
+                        <i class=" feature-box__icon icon-basic-compass"></i>
+                        <h3 class="heading-teriatry u-margin-bottom-small" > we direct you</h3>
+                        <p class="feature-box__text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit, officia!
+                            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit, officia!
+                             
+                        </p>
+                    </div>
+                </div>
+
+                <!--coloumn-3-->
+                <div class="col-1-of-4">
+                    
+                    <div class="feature-box">
+                        <i class=" feature-box__icon icon-basic-map"></i>
+                        <h3 class="heading-teriatry u-margin-bottom-small" > We guide you!</h3>
+                        <p class="feature-box__text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit, officia!
+                            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit, officia!
+                             
+                        </p>
+                    </div>
+                </div>
+
+                <!--coloumn-4-->
+                <div class="col-1-of-4">
+                    
+                    <div class="feature-box">
+                        <i class=" feature-box__icon icon-basic-heart"></i>
+                        <h3 class="heading-teriatry u-margin-bottom-small" > we care you</h3>
+                        <p class="feature-box__text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit, officia!
+                            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit, officia!
+                             
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="section-tours" id="tours">
+            <div class="u-center-text u-margin-bottom-big">
+                <h2 class="heading-secondary">
+                    Our Services & Plans
+                </h2>
+            </div>
+
+            <!--rows stating from here-->
+            <div class="row">
+                <!--coloumn-1-->
+                <div class="col-1-of-3">
+                    <div class="card">
+                        <!--front side of the card-->
+                        <div class="card__side card__side--front">
+                            <div class="card__picture card__picture--1">
+                                
+                            </div>
+                            <h4 class="card__heading">
+                                <span class="card__heading-span card__heading-span--1">permium airbus</span>
+                                
+                            </h4>
+                            <div class="card__details">
+                                <ul>
+                                    <li>details to be filled</li>
+                                    <li>details to be filled</li>
+                                    <li>details to be filled</li>
+                                    <li>details to be filled</li>
+                                    <li>details to be filled</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!--backside of the card-->
+                        <div class="card__side card__side--back card__side--back-1">
+                            <div class="card__cta">
+                                <div class="card__price-box">
+                                    <p class="card__price-only">only</p>
+                                    <p class="card__price-value">$500</p>
+                                </div>
+                                <a href="#popup" class="btn btn--white">View More</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!--coloume-2-->
+                <div class="col-1-of-3">
+                    <div class="card">
+                        <!--front side of the card-->
+                        <div class="card__side card__side--front">
+                            <div class="card__picture card__picture--2">
+                                
+                            </div>
+                            <h4 class="card__heading">
+                                <span class="card__heading-span card__heading-span--2">best suitied for meetings</span>
+                                
+                            </h4>
+                            <div class="card__details">
+                                <ul>
+                                    <li>details to be filled</li>
+                                    <li>details to be filled</li>
+                                    <li>details to be filled</li>
+                                    <li>details to be filled</li>
+                                    <li>details to be filled</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!--backside of the card-->
+                        <div class="card__side card__side--back card__side--back-2">
+                            <div class="card__cta">
+                                <div class="card__price-box">
+                                    <p class="card__price-only">only</p>
+                                    <p class="card__price-value">$500</p>
+                                </div>
+                                <!--google forms link-->
+                                <a href="#popup" class="btn btn--white">View More</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!--coloumn-3-->
+                <div class="col-1-of-3">
+                    <div class="card">
+                        <!--front side of the card-->
+                        <div class="card__side card__side--front">
+                            <div class="card__picture card__picture--3">
+                                
+                            </div>
+                            <h4 class="card__heading">
+                                <span class="card__heading-span card__heading-span--3">for luxary parties</span>
+                                
+                            </h4>
+                            <div class="card__details">
+                                <ul>
+                                    <li>details to be filled</li>
+                                    <li>details to be filled</li>
+                                    <li>details to be filled</li>
+                                    <li>details to be filled</li>
+                                    <li>details to be filled</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!--backside of the card-->
+                        <div class="card__side card__side--back card__side--back-3">
+                            <div class="card__cta">
+                                <div class="card__price-box">
+                                    <p class="card__price-only">only</p>
+                                    <p class="card__price-value">$500</p>
+                                </div>
+                                <!-- //whatsapplink -->
+                                <a href="popup" class="btn btn--white">View More</a>
+                            </div>
+                        </div>  
+                    </div>
+                </div>
+            </div>
+            <div class="u-center-text u-margin-top-huge">
+                <a href="#" class="btn btn--green">Discover more!</a>
+            </div>
+        </section>
+
+        <!--stories begins-->
+       <section class="section-stories">
+           <div class="bg-video">
+               <video class="bg-video__content" autoplay muted loop>
+                   <!--without autoplay we cant run the video in the background-->
+                   <!--without muted we cant mute the sound of the video in the background-->
+                   <!--using the loop we can rin the video everytime-->
+                   <source src="./background-assest/In-The-Clouds.mp4" type="video/mp4">
+                    soory folks your browser is not supported for this video :-(
+               </video>
+           </div>
+        <div class="u-center-text u-margin-bottom-big">
+
+            <h2 class="heading-secondary heading-row">We make people geniuely happy</h2>
+        </div>
+        <!-- story1-->
+         <div class="row">
+            <div class="story">
+                <figure class="story__shape">
+                    <img src="./background-assest/girl0.jpg" alt="girl0" class="story__image">
+                    <figcaption class="story__caption">Penny Robinson</figcaption>
+                </figure>
+                <div class="story__text">
+                    <h3 class="heading-teriatry u-margin-bottom-small">I had a great experiance with the ab airways</h3>
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ab numquam ut, exercitationem nostrum adipisci,
+                         quia cum provident earum est maiores dolorum iusto reprehenderit.
+                         rum adipisci, quia cum provident earum est maiores dolorum iusto reprehenderit
+                         rum adipisci, quia cum provident earum est maiores dolorum iusto reprehenderit</p>
+                </div>
+            </div>
+        </div>
+
+        <story2>
+        <div class="row">
+            <div class="story">
+                <figure class="story__shape">
+                    <img src="./background-assest/girl1.jpg" alt="girl1" class="story__image story__image--2">
+                    <figcaption class="story__caption ">kimmi jackson</figcaption>
+                </figure>
+                <div class="story__text">
+                    <h3 class="heading-teriatry u-margin-bottom-small">I had a great experiance with the ab airways</h3>
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ab numquam ut, exercitationem nostrum adipisci,
+                         quia cum provident earum est maiores dolorum iusto reprehenderit.
+                         rum adipisci, quia cum provident earum est maiores dolorum iusto reprehenderit
+                         rum adipisci, quia cum provident earum est maiores dolorum iusto reprehenderit</p>
+                </div>
+            </div>
+        </div>
+       </section> 
+    </main>
+    <footer class="footer">
+        <div class="footer__logo-box">
+            <img src="./background-assest/brand.png" alt="amazon" class="footer-logo">
+        </div>
+        <div class="row">
+        <div class="col-1-of-2">
+            <div class="footer__navigation">
+                <ul class="footer__list">
+                    <li class="footer__item"><a href="#" class="footer__link"><img src="https://img.icons8.com/ios-filled/50/000000/facebook-circled.png"/> </li>
+                    <li class="footer__item"> <a href="#" class="footer__link"><img src="https://img.icons8.com/color/48/000000/whatsapp.png"/></li>
+                    <li class="footer__item"> <a href="#" class="footer__link"><img src="https://img.icons8.com/fluent/48/000000/twitter.png"/></a> </li>
+                    <li class="footer__item"> <a href="#" class="footer__link"><img src="data:image/png;base64,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"/></a> </li>
+                   
+                </ul>
+            </div>
+        </div>
+        <div class="col-1-of-2">
+            <p class="footer__copyright">
+                This website was codeded by <a href="#" class="footer__link">CoderHive Company</a>
+                for AB airways avaiation company private limited.CoderHive compnay is situated at India,Telanga,Karimnagar,Karimnagar,Karimnagar and managed by 
+                <a href="#" class="footer__link">NISAR KHAN</a>
+            </p>
+        </div>
+    </div>
+    </footer>
+
+    <!--for the popup and popup code resides here-->
+    <div class="popup" id="popup">
+        <div class="popup__content">
+            <div class="popup__left">
+                <img src="./background-assest/popup-image-3.jpg" alt="pop-0" class="popup__img">
+                <img src="./background-assest/popup-image-1.jpeg" alt="pop-1" class="popup__img">
+            </div>
+            <div class="popup__right">
+                <a href="#tours" class="popup__close">&times;</a>
+                <h2 class="heading-secondary u-margin-bottom-small">Start booking!!</h2>
+                <h3 class="heading-teritary u-margin-bottom-small">Explore Your Self Now, With AB Wings</h3>
+                <p class="popup__text">
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. 
+                    Tenetur voluptatem dignissimos nam incidunt consectetur nisi,
+                     quam modi ut ea perspiciatis eum veniam id 
+                    tempore recusandae alias sequi maiores natus consequuntur.
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. 
+                    Tenetur voluptatem dignissimos nam incidunt consectetur nisi,
+                     quam modi ut ea perspiciatis eum veniam id 
+                    tempore recusandae alias sequi maiores natus consequuntur.
+                    it amet consectetur, adipisicing elit. 
+                    Tenetur voluptatem dignissimos nam incidunt consectetur nisi,
+                     quam modi ut ea perspiciatis eum veniam id 
+                    tempore recusandae alias sequi maiores natus consequuntur.
+                </p>
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSe8u-1VxcUyK-t_bKzLI8TKrNw4ZvrEg85JJh_P2Ad8QT__uw/viewform?usp=sf_link" class="btn btn--green">Book Now!</a>
+            </div>
+        </div>
+    </div>
+
+<!--mission-->
+    <div id="mission" class="popup__mission">
+        <div class="popup__mission__content">
+            <div class="popup__mission__text">
+                <h2 class="heading-secondary u-margin-bottom-small">OUR MISSION</h2>
+                <a href="#navigation" class="popup__close">&times;</a>
+                <p>Our mission is to provide our clients with the best, fully customized service in 
+                    private aviation and corporate jets with the extraordinary care they deserve at a reasonable 
+                    cost while safety, security and luxury remain uncompromised.</p>
+            </div>
+
+        </div>
+
+        
+    
+    </div>
+
+<!--vission-->
+   <div id="vission" class="popup__mission">
+        <div class="popup__mission__content">
+            <div class="popup__mission__text">
+                <h2 class="heading-secondary u-margin-bottom-small">OUR MISSION</h2>
+                <a href="#navigation" class="popup__close">&times;</a>
+                <p>Our vision at Aviation Horizons is to lead corporate jet and VIP aircraft management operations in the Middle East and be the preferred aircraft operator partner and aviation services provider in the Saudi Arabia, Europe and the Middle East.</p>
+            </div>
+
+        </div>    
+    </div>
+
+    <!--our values-->
+
+    <div id="values" class="popup__mission">
+        <div class="popup__mission__content">
+            <div class="popup__mission__text">
+                <h2 class="heading-secondary u-margin-bottom-small">OUR VALUES</h2>
+                <a href="#navigation" class="popup__close">&times;</a>
+                <p>
+
+                    Our values define what we believe in and how we behave to deliver our mission and vision. Our dedicated employees have the highest levels of expertise and do their best to go above and beyond our clients’ expectations of a world-class aircraft operator company in the kingdom. 
+We are driven by our values to help our clients:
+<ul>
+    <li class="values"> Relax and unwind while enjoying and making the most of every moment of their flight.
+    </li>
+    <li class="values">
+        • Relax and unwind while enjoying and making the most of every moment of their flight.
+
+    </li>
+    <li class="values">
+        • Experience the luxury of our timely on ground handling services, top-notch on-board services and elegant sky dining.
+
+    </li>
+    <li class="values">
+        • Leave the worry associated with flying arrangements behind and reach their destinations on time.
+Being part of the Saudi nation, our key values and responsibilities towards our society are:
+    </li>
+    <li class="values">
+        • Boosting profitability, efficiency and performance of the kingdom’s aviation sector under the Saudi vision for 2030.
+
+    </li>
+    <li class="values">
+        • Simplifying processes and increasing passenger convenience while reducing costs and improving efficiency.
+
+    </li>
+    <li class="vales">
+        • Driving major airport developments across Saudi Arabia.
+
+    </li>
+</ul>
+     
+
+                </p>
+            </div>
+
+        </div>
+
+        
+    
+    </div>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- <section class="gird-test">
+        <div class="row">
+            <div class="col-1-of-2">
+                col 1 of 2
+            </div>
+            <div class="col-1-of-2">
+                col 1 of 2
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-1-of-3">
+                col 1 of 3
+            </div>
+            <div class="col-1-of-3">
+                col 1 of 3
+            </div>
+
+            <div class="col-1-of-3">
+                col 1 of 3
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-1-of-3">
+                col 1 of 3
+            </div>
+            <div class="col-2-of-3">
+                col 2 of 3
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-1-of-4">
+                col 1 of 4
+            </div>
+            <div class="col-1-of-4">
+                col 1 of 4
+            </div>
+
+            <div class="col-1-of-4">
+                col 1 of 4
+            </div>
+            <div class="col-1-of-4">
+                col 1 of 4
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-1-of-4">
+                col 1 of 4
+            </div>
+            <div class="col-1-of-4">
+                col 1 of 4
+            </div>
+
+            <div class="col-2-of-4">
+                col 2 of 4
+            </div>
+            
+            
+        </div>
+
+        <div class="row">
+            <div class="col-1-of-4">
+                col 1 of 4
+            </div>
+            <div class="col-3-of-4">
+                col 3 of 4
+            </div> -->
+
+            
+            
+            
+        </div>
+
+        
+
+
+    </section>
+</body>
+
+</html>

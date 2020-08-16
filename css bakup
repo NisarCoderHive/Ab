@@ -1,0 +1,173 @@
+
+/*global declaration*/
+*
+{
+    padding:0;
+    margin:0;
+    box-sizing: border-box;
+}
+body
+{
+    font-weight:400;
+    font-family:sans-serif;
+    line-height: 1.7;
+    font-size:16px;
+    color:#777; /*grey color*/
+    padding:30px;
+}
+.header
+{
+    height:95vh;
+    background-image:  url('./background-assest/01.jpg');
+    background-size: cover;  /*tries to fit completely in the vh of yhe box*/
+    background-position: top; 
+ /*when the browser resizes its screen size the top if the pics chunk wont be moved and reaming pics like bottom is changed*/
+    clip-path: polygon(0 0, 100% 0, 100% 80vh , 0 100%);
+    position: relative;
+
+    
+}
+.logo-box
+{
+    position: absolute;
+    top:40px;
+    left:40px;
+}
+.logo
+{   
+    height: 35px;
+
+}
+.text-box
+{
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    width:70%;   /* by me*/
+    text-align: center;
+}
+.heading-primary
+{   
+    color:#fff;
+    text-transform: uppercase;
+    backface-visibility: hidden; /* a hack for not occur the shack when animation is running*/
+    margin-bottom: 60px;
+
+}
+.heading-primary-main
+{
+    display: block;
+    font-weight: 400;
+    letter-spacing: 15px;
+    animation-name: movesInLeft;
+    animation-duration: 1s;
+    animation-timing-function: ease-out;
+
+    /* east-out satrs slowly and ends fast*/
+    /*animation-delay when we use this animation delay the animation starts after the specified time 
+    if we specify dealy 3s then animatoin begins after 3seconds!!*/
+    /*animation-ittration-count like loop */
+}
+.heading-primary-sub
+{
+    display:block;
+    letter-spacing: 17.4px;
+    font-weight: 400;
+    font-size:20px;
+    animation:movesInRight 1s ease-out;
+    
+
+}
+
+/* animation for the headings*/
+@keyframes movesInLeft
+{
+    0%   /* starting of animation*/
+    {
+        opacity:0;
+        transform: translateX(-100px);
+        
+    }
+    80%
+    {
+        transform:translateX(10px);
+    }
+    100%  /* ending state*/
+    {
+        opacity:1;
+        transform: translate(0);
+    }
+}
+@keyframes movesInRight
+{
+    0%   /* starting of animation*/
+    {
+        opacity:0;
+        transform: translateX(100px);
+        
+    }
+    80%
+    {
+        transform:translateX(-10px);
+    }
+    100%  /* ending state*/
+    {
+        opacity:1;
+        transform: translate(-100);
+    }
+}
+/* end of animations*/
+
+/*button css*/
+
+.btn:link, .btn:visited
+{
+    /*link is pseudo class used for css in spcl case*/
+    text-transform: uppercase;
+    text-decoration: none;
+    padding:15px 40px;
+    display:inline-block;
+    border-radius: 100px;
+    transition: all .2s;
+    position: relative;
+    
+
+}
+.btn-white
+{
+    color:#777;
+    background-color: #fff;
+    
+}
+.btn:hover
+{
+    transform: translateY(-3px);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+.btn:active
+{
+    transform: translateY(-1px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+.btn::after
+{
+    content: "";
+    display:inline-block;
+    position: absolute;
+    width: 100%;
+    height:100%;
+    top:0;
+    left:0;
+    z-index:-1;
+    border-radius: 100px;
+    transition: all .4s;
+}
+.btn-white::after{
+    background-color: #fff;
+}
+.btn:hover::after
+{
+    transform: scale(1.5);
+    opacity: 0;
+}
